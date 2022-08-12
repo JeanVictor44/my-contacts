@@ -1,0 +1,18 @@
+cria um container e roda ele
+|
+docker run --name pg -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres
+
+docker stop <nome do container> -> para o container
+
+docker start <nome do container> -> roda o container
+
+docker exec -it pg bash -> executa o con tainer pg de forma interativa, abrindo o bash dele
+
+psql -U root -> faz login no banco postgres usando o user root
+
+
+\l -> Lista os bancos de dados
+\c <nome do banco> -> para selecionar um banco de dados
+\dt  -> lista as colunas de uma tabela no banco de dados
+
+yarn add pg -> driver do postgres para fazer a ponte do código e a base de dados

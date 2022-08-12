@@ -1,0 +1,9 @@
+Request -> Controller -> Response
+
+Request -> Middlewares -> Controller -> Response
+
+Serve para:
+
+1- manipular o req e res, exemplo: req.io para adicionar o objeto do socket io
+2- Controlar o life cycle, ex: O middleware pode servir para verificar o token de autenticação,
+   caso seja válido ele permite uma response caso seja inválido ele bloqueia a requisição

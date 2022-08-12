@@ -1,0 +1,17 @@
+Pegou diretamente um input do usuário e inseriu na query do banco de dados sem tratamento
+
+async create({
+    name, email, phone, category_id,
+  }) {
+    /*
+      SQL INJECTION -> ele pode mandar SQL que será executado no nosso
+      banco, podendo listar tabelas e até apaga-las
+    */
+    // name - ';
+    // INSERT INTO contacts(name) VALUE('';') -> usuário forçando erro
+
+    const row = await db.Query(`
+      INSERT INTO contacts(name, email, phone, category_id)
+      VALUES(${name}, ${email}, ${phone}, ${category_id})
+    `);
+}

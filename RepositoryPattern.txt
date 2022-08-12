@@ -1,0 +1,16 @@
+Nossas entidades devem apenas conhecer as regras de negócio CRUD
+
+e não as funções de manipulação
+
+Repository Pattern: Layer (camada) de abstração de acesso ao Data Source
+
+Controller <-> Data Source
+
+Controller <-> Repository -> Data Source
+
+caso haja migrações para banco de dados diferentes não será necessário alterar o Controller
+onde fica nossas regras de negócios e nosso código sensível, só precisamos refatorar nosso repositório
+
+Repository será uma classe que receberá como argumento uma entidade (User, Contact, Cars)
+e fornecerá os métodos de manipulação desta entidade
+
